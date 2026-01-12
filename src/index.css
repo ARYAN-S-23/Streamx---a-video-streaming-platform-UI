@@ -1,0 +1,147 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #141414;
+  color: white;
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  align-items: center;
+  padding: 12px 20px;
+  background: black;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  color: #e50914;
+  margin-right: 20px;
+}
+
+.search-box {
+  position: relative;
+}
+
+.search-input {
+  padding: 6px 12px;
+  border-radius: 4px;
+  border: none;
+  width: 260px;
+}
+
+.search-results {
+  position: absolute;
+  top: 35px;
+  background: #111;
+  width: 260px;
+  border-radius: 4px;
+  z-index: 999;
+}
+
+.search-results a {
+  display: block;
+  padding: 8px;
+  border-bottom: 1px solid #333;
+}
+
+/* MENU */
+.nav-links {
+  display: flex;
+  margin-left: auto;
+  gap: 16px;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 22px;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+/* VIDEO CARD */
+.video-card {
+  overflow: hidden;
+}
+
+
+.video-card:hover {
+  transform: translateZ(0) scale(1.05);
+}
+
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .search-input {
+    width: 180px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 55px;
+    left: 0;
+    width: 100%;
+    background: black;
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 16px;
+  padding: 20px;
+  align-items: start;
+}
+
+
+.video-card img {
+  transition: transform 0.3s ease;
+}
+
+.video-card:hover img {
+  transform: scale(1.08);
+}
+
+
+/* Mobile optimization */
+@media (max-width: 640px) {
+  .grid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  }
+}
+.video-card {
+  min-width: 0;
+}
+
+.video-card img {
+  width: 100%;
+  display: block;
+}
+
+.mylist-btn, .playlist-select {
+  margin-top: 6px;
+  display: block;
+}
+
